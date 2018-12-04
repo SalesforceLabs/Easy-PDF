@@ -1,0 +1,2 @@
+# Easy-PDF
+Easy PDF creates an Invoice, Quote, and/or Packing Slip PDFs with the click of a button! This package also comes with an editable PDF template of the Opportunities object as a guide to start making your own PDFs by editing our HTML. Our Visualforce and Apex code is all editable so that you can apply the concept of generating a PDF template from the click of a button to any Salesforce object that you desire. This is the first unmanaged package on the AppExchange, and it’s cleverly designed to be flexible and extensible.
