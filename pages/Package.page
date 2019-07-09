@@ -1,0 +1,121 @@
+<apex:page standardController="Quote" extensions="QuoteLineItemsExtension" showHeader="false" renderas="pdf">
+
+<table border="0" cellspacing="0" cellpadding="5" width="100%" height="200%" id="table1">
+<tr height="410%">
+        <th width="30%">
+        
+ <!-- Your logo pulls the static resource here -->       
+                    
+        <img src='{!URLFOR($Resource.businesslogo)}' title="logo" width="150" height="150"/>
+        </th>
+        
+ <!-- Template Header -->
+ 
+        <th align="center" width="30%"><font face="Arial">                                  
+                    <b>{!Quote.Template_Header_Line_1__c}</b><br/>
+                    <b>{!Quote.Template_Header_Line_2__c}</b><br/>
+                    <b>{!Quote.Template_Header_Line_3__c}</b><br/>
+                    <b>{!Quote.Template_Header_Line_4__c}</b><br/>
+                    <b>{!Quote.Template_Header_Line_5__c}</b><br/>
+                    <br/>
+                    </font>
+        </th>
+
+ <!-- Right side of header has important info -->  
+        
+        <th width="25%" align="right"><font face="Arial" >
+            <b>Packing Slip: {!Quote.Invoice_Number__c} </b><br/>
+            <b>Date:    
+                <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                    <apex:param value="{!NOW()}" /> <br/>
+                </apex:outputText> <br/>
+            </b>
+            <b>Number of Deliveries: {!Quote.Number_of_Deliveries__c}</b></font><br/>
+        </th>
+</tr>     
+   
+        </table>    
+
+<hr/>  
+
+ <!-- Second section -->
+ 
+<p><b><font face="Arial" color="#000080">Address Information</font></b></p>
+
+<table border="0" width="100%" id="table2">
+<tr>
+       <td colspan="3">
+           <font face="Arial"><b>Account Name:</b> {!Quote.Account.Name} <br/></font>
+       </td>
+</tr>
+<tr>
+       <td>          
+           <font face="Arial">Bill To:<br/>
+                             {!Quote.Account.BillingStreet}<br/>
+                             {!Quote.Account.BillingCity} {!Quote.Account.BillingPostalCode}
+           </font>
+        </td>
+        <td width="50%"></td>
+        <td >
+           <font face="Arial">Ship To:<br/>
+                              {!Quote.Account.ShippingStreet}<br/>
+                              {!Quote.Account.ShippingPostalCode} {!Quote.Account.ShippingCity}
+           </font>
+        </td>
+</tr>    
+</table>
+<br/>
+<hr/>
+
+<!-- Product section -->
+
+<p><b><font color="#000080" face="Arial">Products</font></b></p>
+<table border="0" width="100%" id="table4">
+<tr>
+       <td bgcolor="#C0C0C0"><font face="Arial">Product</font></td>
+       <td bgcolor="#C0C0C0"><font face="Arial">Description</font></td>
+       <td bgcolor="#C0C0C0"><font face="Arial">Quantity Delivered</font></td>
+
+</tr> 
+    <apex:repeat value="{!QuoteLineItems}" var="line">
+      <tr>
+       <td><apex:outputField value="{!line.Product2Id}"/></td>
+       <td><apex:outputField value="{!line.Description}"/></td>       
+       <td><apex:outputField value="{!line.Quantity}"/></td> 
+      </tr>
+     </apex:repeat>
+<tr>
+       <td bgcolor="#C0C0C0" align="right" colspan="6"></td>
+</tr>
+</table>
+<br/>
+<hr/>
+
+ <!-- Notes section -->
+
+<p><b><font color="#000080" face="Arial">Notes</font></b></p>
+<table border="0" width="100%" id="table3">
+<tr>
+        <td><font face="Arial">
+        
+            Tracking Number:&nbsp;<apex:OutputField value="{!Quote.Tracking_Number__c}"/><br/>
+            Invoice Number:&nbsp;<apex:OutputField value="{!Quote.Invoice_Number__c}"/><br/>
+            Invoice Paid:&nbsp;<apex:OutputField value="{!Quote.Invoice_Paid__c}"/><br/>
+
+           
+            </font>
+        </td>
+      
+</tr>
+</table>
+
+<hr/>
+
+
+ <!-- Footer -->
+
+    <div class="footer">
+       <p align="center"><font face="Arial"><i>Copyright {!$Organization.Name}.</i></font></p>
+    </div>
+
+</apex:page>

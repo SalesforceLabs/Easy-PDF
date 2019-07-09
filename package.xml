@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Easy PDF</fullName>
+    <description>The Easy PDF, Simple Invoice/Quote/Packing Slip app.</description>
+    <types>
+        <members>QuoteLineItemsExtension</members>
+        <members>QuoteLineItemsExtensionTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Invoice</members>
+        <members>Opportunity_PDF</members>
+        <members>Package</members>
+        <members>Quote</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>Opportunity.Billing_Frequency__c</members>
+        <members>Opportunity.Conditions__c</members>
+        <members>Opportunity.Payment_Method__c</members>
+        <members>Opportunity.Payment_Terms__c</members>
+        <members>Opportunity.Start_Date__c</members>
+        <members>Quote.Billing_Frequency__c</members>
+        <members>Quote.Invoice_Number__c</members>
+        <members>Quote.Invoice_Paid__c</members>
+        <members>Quote.Number_of_Deliveries__c</members>
+        <members>Quote.Products__c</members>
+        <members>Quote.Purchase_End_Date__c</members>
+        <members>Quote.Purchase_Start_Date__c</members>
+        <members>Quote.Template_Header_Line_1__c</members>
+        <members>Quote.Template_Header_Line_2__c</members>
+        <members>Quote.Template_Header_Line_3__c</members>
+        <members>Quote.Template_Header_Line_4__c</members>
+        <members>Quote.Template_Header_Line_5__c</members>
+        <members>Quote.Tracking_Number__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>businesslogo</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Opportunity.Opportunity_PDF</members>
+        <members>Quote.Invoice_PDF</members>
+        <members>Quote.Packing_Slip_PDF</members>
+        <members>Quote.Quote_PDF</members>
+        <name>WebLink</name>
+    </types>
+    <version>45.0</version>
+</Package>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Billing_Frequency__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app.</description>
+        <externalId>false</externalId>
+        <label>Billing Frequency</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+                <value>
+                    <fullName>Weekly</fullName>
+                    <default>false</default>
+                    <label>Weekly</label>
+                </value>
+                <value>
+                    <fullName>Bi-Weekly</fullName>
+                    <default>false</default>
+                    <label>Bi-Weekly</label>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Bi-Monthly</fullName>
+                    <default>false</default>
+                    <label>Bi-Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Yearly</fullName>
+                    <default>false</default>
+                    <label>Yearly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Number__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. This allows an invoice to take it&apos;s number from Quote.</description>
+        <externalId>false</externalId>
+        <formula>QuoteNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Number</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Paid__c</fullName>
+        <defaultValue>&quot;No&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Invoice Paid</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Number_of_Deliveries__c</fullName>
+        <defaultValue>&quot;1&quot;</defaultValue>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. If an order includes more than 1 part (i.e. 3 boxes) this tracks the number of parts associated with a Packing Slip.</description>
+        <externalId>false</externalId>
+        <label>Number of Deliveries</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Products__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>pulls the line item information from opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity Products</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Products</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_End_Date__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app.</description>
+        <externalId>false</externalId>
+        <label>Purchase End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Start_Date__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app.</description>
+        <externalId>false</externalId>
+        <label>Purchase Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Template_Header_Line_1__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. This allows you to easily customize the header information. For example, the representative&apos;s: phone number, fax number, email address, work address, social media handles, etc.</description>
+        <externalId>false</externalId>
+        <label>Template Header Line 1</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Template_Header_Line_2__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. This allows you to easily customize the header information. For example, the representative&apos;s: phone number, fax number, email address, work address, social media handles, etc.</description>
+        <externalId>false</externalId>
+        <label>Template Header Line 2</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Template_Header_Line_3__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. This allows you to easily customize the header information. For example, the representative&apos;s: phone number, fax number, email address, work address, social media handles, etc.</description>
+        <externalId>false</externalId>
+        <label>Template Header Line 3</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Template_Header_Line_4__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. This allows you to easily customize the header information. For example, the representative&apos;s: phone number, fax number, email address, work address, social media handles, etc.</description>
+        <externalId>false</externalId>
+        <label>Template Header Line 4</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Template_Header_Line_5__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. This allows you to easily customize the header information. For example, the representative&apos;s: phone number, fax number, email address, work address, social media handles, etc.</description>
+        <externalId>false</externalId>
+        <label>Template Header Line 5</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tracking_Number__c</fullName>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. This allows a tracking number to be associated with a Packing Slip. This is in rich text format to accommodate bar codes, and images.</description>
+        <externalId>false</externalId>
+        <label>Tracking Number</label>
+        <length>256</length>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <webLinks>
+        <fullName>Invoice_PDF</fullName>
+        <availability>online</availability>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. Converts Quote details into an Invoice in PDF format.</description>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Invoice PDF</masterLabel>
+        <openType>newWindow</openType>
+        <page>Invoice</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Packing_Slip_PDF</fullName>
+        <availability>online</availability>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. Converts Quote details into a Packing Slip in PDF format.</description>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Packing Slip PDF</masterLabel>
+        <openType>newWindow</openType>
+        <page>Package</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Quote_PDF</fullName>
+        <availability>online</availability>
+        <description>Part of the Simple Invoice/Quote/Packing Slip app. Converts Quote details into a Quote in PDF format.</description>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Quote PDF</masterLabel>
+        <openType>newWindow</openType>
+        <page>Quote</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+</CustomObject>

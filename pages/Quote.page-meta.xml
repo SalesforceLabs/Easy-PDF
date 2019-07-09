@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>44.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Part of the Simple Invoice/Quote/Packing Slip app. Converts a Quote record into a PDF. This is easy to customize.</description>
+    <label>Quote</label>
+</ApexPage>

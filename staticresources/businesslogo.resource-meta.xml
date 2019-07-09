@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>image/png</contentType>
+    <description>Part of the Simple Invoice/Quote/Packing Slip app. This is a generic business logo that you replace with your own business logo for use on the form headers.</description>
+</StaticResource>

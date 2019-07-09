@@ -1,0 +1,150 @@
+<apex:page standardController="Opportunity" showHeader="false" renderas="pdf">
+        
+<table border="0" cellspacing="0" cellpadding="5" width="100%" height="200%" id="table1">
+<tr height="410%">
+        <th width="30%">
+            
+ <!-- Your logo pulls the static resource here -->       
+                    
+                    <img src='{!URLFOR($Resource.businesslogo)}' title="logo" width="150" height="150"/>
+        </th>
+  
+ <!-- Template Header -->
+    
+        <th align="center" width="30%"><font face="Arial" >                                    
+                    <b>{!$Organization.Name}</b><br/>
+                    {!$Organization.Street}<br/>
+                    {!$Organization.City}, {!$Organization.State} {!$Organization.PostalCode} <br/>
+                    {!$Organization.Country}<br/>
+                    </font>
+        </th>
+    
+ <!-- Right side of header has important info -->  
+    
+        <th width="25%" align="right"><font face="Arial" >
+        <b>Prepared for: {!Opportunity.Account.Name}</b></font><br/>
+        </th>
+</tr>     
+   
+        </table>    
+
+ <!-- Second section -->
+    
+<hr/>  
+<p><b><font face="Arial" color="#000080">Address Information</font></b></p>
+
+<table border="0" width="100%" id="table2">
+<tr>
+       <td colspan="3">
+           <font face="Arial"><b>Account Name:</b> {!Opportunity.Account.Name} <br/></font>
+       </td>
+</tr>
+<tr>
+       <td>          
+           <font face="Arial">Customer Address:<br/>
+                             {!Opportunity.Account.BillingStreet}<br/>
+                             {!Opportunity.Account.BillingCity}, {!Opportunity.account.BillingState} {!Opportunity.Account.BillingPostalCode}
+           </font>
+        </td>
+        <td width="50%"></td>
+        <!--
+        <td >
+           <font face="Arial">Ship To:<br/>
+                              {!Opportunity.Account.ShippingStreet}<br/>
+                              {!Opportunity.Account.ShippingPostalCode}, {!Opportunity.Account.ShippingCity}
+           </font>
+        </td>
+        -->
+</tr>    
+</table>
+<br/>
+<hr/>
+    
+<tr>
+       <td bgcolor="#C0C0C0" align="left" colspan="6">
+       <font face="Arial"><b>Amount:</b>&nbsp;<apex:OutputField value="{!Opportunity.Amount}"/></font></td>
+</tr>
+ <!-- Product section -->
+<!--   
+<p><b><font color="#000080" face="Arial">Products</font></b></p>
+<table border="0" width="100%" id="table4">
+<tr>
+       <td bgcolor="#C0C0C0"><font face="Arial">Product</font></td>
+       <td bgcolor="#C0C0C0"><font face="Arial">Description</font></td>
+       <td bgcolor="#C0C0C0"><font face="Arial">Quantity</font></td>
+       <td bgcolor="#C0C0C0"><font face="Arial">Unit Price</font></td>
+       <td bgcolor="#C0C0C0"><font face="Arial">Total Price</font></td>
+</tr> 
+    <apex:repeat value="{!Opportunity.OpportunityLineItems}" var="line">
+          <tr>
+             <td>{!line.PricebookEntry.Name}</td>
+             <td>{!line.Description}</td>            
+             <td>{!line.Quantity}</td>
+             <td><apex:OutputField value="{!line.UnitPrice}"/></td>
+             <td><apex:OutputField value="{!line.TotalPrice}"/></td>
+          </tr>
+       </apex:repeat>  
+<tr>
+       <td bgcolor="#C0C0C0" align="right" colspan="6">
+       <font face="Arial"><b>Total:</b>&nbsp;<apex:OutputField value="{!Opportunity.Amount}"/></font></td>
+</tr>
+</table>
+<br/>
+<hr/>
+-->    
+ <!-- Notes section -->
+    
+<p><b><font color="#000080" face="Arial">Terms and Conditions</font></b></p>
+<table border="0" width="100%" id="table3">
+<tr>
+        <td width="30%"><font face="Arial">
+        
+              Start Date:&nbsp;<apex:OutputField value="{!Opportunity.Start_Date__c}"/><br/>
+              Close Date:&nbsp;<apex:OutputField value="{!Opportunity.CloseDate}"/><br/>
+            </font>
+        </td>
+        <td width="30%"></td>
+        <td width="30%"><font face="Arial">
+              Payment Method:&nbsp;<apex:OutputField value="{!Opportunity.Payment_Method__c}"/><br/>
+              Payment Terms:&nbsp;<apex:OutputField value="{!Opportunity.Payment_Terms__c}"/><br/>
+            </font>
+       </td>
+</tr>
+</table>
+
+<hr/>
+<table width="100%" id="table5">
+<tr>
+   <td width="50%"><b>{!$Organization.Name}</b></td>
+   <td width="50%"><b>{!Opportunity.Account.Name}</b></td>
+</tr>
+<tr>
+   <td width="50%">&nbsp;</td>
+   <td width="50%">&nbsp;</td>
+</tr>
+<tr>
+   <td width="50%">Signature<hr color="black" size="1"/></td>
+   <td width="50%">Signature<hr color="black" size="1"/></td>
+</tr>
+<tr>
+   <td width="50%">Name<hr color="black" size="1"/></td>
+   <td width="50%">Name<hr color="black" size="1"/></td>
+</tr>
+<tr>
+   <td width="50%">Title<hr color="black" size="1"/></td>
+   <td width="50%">Title<hr color="black" size="1"/></td>
+</tr>
+<tr>
+   <td width="50%">Date<hr color="black" size="1"/></td>
+   <td width="50%">Date<hr color="black" size="1"/></td>
+</tr>
+</table>
+
+ <!-- Footer -->
+    
+    <div class="footer">
+       <p align="center"><font face="Arial"><i>Copyright {!$Organization.Name}.</i></font></p>
+    </div>
+
+
+</apex:page>
